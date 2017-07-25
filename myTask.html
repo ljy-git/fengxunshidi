@@ -16,10 +16,23 @@
                 <div class="right"></div>
             </div>
             <div class="wrap_main">
-	            <ul>
-	            	<li v-for="todo in my.taskStatus">
+	            <ul class="statusList">
+	            	<li v-for="(todo,index) in my.taskStatus" @click="addActive(index)" :class="{'active':index==current}">
 				      {{ todo.text }}
 				    </li>
+	            </ul>
+	            <ul class="mission">
+	            	<li v-for="item in my.missionDetail" v-if="current==item.type">
+	            		<a :href="item.url">
+	            			<div class="pic"><img :src="item.src" /></div>
+		            		<div class="intro">
+		            			<div class="local"><h4>{{item.storeName}}</h4><span>{{item.price}}/单</span></div>
+		            			<p>{{item.itemName}}</p>
+		            			<p><span>{{item.address}}</span><span>{{item.time}}</span></p>
+		            		</div>
+		            		<div class="arrowr"><i class="iconfont icon-xiangyoujiantou"></i></div>
+	            		</a>
+	            	</li>
 	            </ul>
             </div>
 		</div>
@@ -27,31 +40,30 @@
 		<script src="js/vue-resource1.3.js"></script>
 		<script src="js/ydui.js"></script>
 		<script src="js/ydui.flexible.js"></script>
-<!--<script src="js/jd_province_city_id.js"></script>-->
 		<script src="js/common.js"></script>
 		
-<script>
-var FILE = "data/myTask.json"
-var call = Vue.http({method:'GET', url:FILE });
-
-call.then(function (data) {
-	console.log(data.body)
-    var vm = new Vue({
-      mixins: [mixin_common],
-      el: '#app',
-      mounted: function() {},
-
-      methods:{
-      },
-      data: {
-        my:data.body,
-      }
-    });
-});
-
-
-
-
-</script>
+		<script>
+			var FILE = "data/myTask.json"
+			var call = Vue.http({method:'GET', url:FILE });
+			
+			call.then(function (data) {
+			//	console.log(data.body)
+			    var vm = new Vue({
+			      mixins: [mixin_common],
+			      el: '#app',
+			      mounted: function() {},
+			
+			      methods:{
+			      	addActive:function(index){
+			      		  this.current=index
+			      	}
+			      },
+			      data: {
+			        my:data.body,
+			        current:0,
+			      }
+			    });
+			});
+		</script>
 	</body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+    <title>任务详情</title>
+    <link rel="stylesheet" href="css/ydui.base.css">
+    <link rel="stylesheet" href="css/ydui.rem.css">
+    <link rel="stylesheet" href="css/common.css">
+  </head>
+	<body style="background: white;">
+		<div id="app" v-cloak > 
+			<div class="head2">
+                <a href="myTask.html" class="left"><i class='iconfont icon-xiangzuojiantou'></i>返回</a>
+                <div class="middle">任务详情</div>
+                <div class="right"></div>
+            </div>
+            <div class="wrap_main">
+            	<ul class="dutyIntro">
+            		<li>
+            			<span class="labels">任务名称：</span><span>{{my.store}}</span>&nbsp;<span>{{my.local}}</span>
+            		</li>
+            		<li>
+            			<span class="labels">任务酬劳：</span><span class="dutyPrice">{{my.price}}元/单</span>
+            		</li>
+            		<li>
+            			<span class="labels">执行时间：</span>{{my.time}}<span></span>
+            		</li>
+            	</ul>
+            	<div class="assign">
+            		<h4>任务说明</h4>
+            		<p>{{my.intro}}</p>
+            	</div>
+            	<p class="grayBar"></p>
+            	<div class="assign">
+            		<h4>任务图示</h4>
+            		<div class="picList">
+            			<img src="images/sku1.jpg" />
+            			<img src="images/sku2.jpg" />
+            			<img src="images/sku3.jpg" />
+            			<img src="images/sku4.jpg" />
+            			<img src="images/sku4.jpg" />
+            		</div>
+            	</div>
+            	<p class="grayBar"></p>
+            	<div class="">
+            		<div class="meterial"><span>资料下载</span><span style="text-align: right;"><i class="iconfont icon-xiangyoujiantou"></i></span></div>
+            		<ul class="files">
+            			<li><span>这是这个文件的标题，可下载的</span><input type="button" value="下载" /></li>
+            			<li><span>这是这个文件的标题，可下载的</span><input type="button" value="下载" /></li>
+            			<li><span>这是这个文件的标题，可下载的</span><input type="button" value="下载" /></li>
+            		</ul>
+            	</div>
+            </div>
+			<div class="footerFixed">
+				<div class="icons"><span class="iconfont icon-aixin"></span>收藏</div>
+				<div class="icons"><span class="iconfont icon-fenxiang"></span>分享</div>
+				<input type="button" value="确认申领" />
+			</div>
+		</div>
+		<script src="js/vue2.js"></script>
+		<script src="js/vue-resource1.3.js"></script>
+		<script src="js/ydui.js"></script>
+		<script src="js/ydui.flexible.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			var FILE = "data/detail.json"
+			var call = Vue.http({method:'GET', url:FILE });
+			
+			call.then(function (data) {
+			    var vm = new Vue({
+			      mixins: [mixin_common],
+			      el: '#app',
+			      mounted: function() {},
+			
+			      methods:{
+			      },
+			      data: {
+			        my:data.body,
+			        store:"",
+			        local:"",
+			        price:"",
+			        time:"",
+			        introa:""
+			      }
+			    });
+			});
+		</script>
+	</body>
+</html>

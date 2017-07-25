@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+    <title>上海风逊实地</title>
+    <link rel="stylesheet" href="css/ydui.base.css">
+    <link rel="stylesheet" href="css/ydui.rem.css">
+    <link rel="stylesheet" href="css/common.css">
+  </head>
+    <body>
+        <div id="app" v-cloak > 
+            <div class="head2">
+                <a href="#" class="left">
+                    <i class='iconfont icon-xiangzuojiantou'></i>返回</a>
+                <div class="middle">登录</div>
+                <div class="right">注册</div>
+            </div>
+            <div class="cell2">
+                <div class="left">账号</div>
+                <div class="middle">
+                    <input type="text" placeholder="请输入手机号">
+                </div>
+            </div>
+            
+
+            
+         </div>
+    </body>
+</html>
+
+<script src="js/vue2.js"></script>
+<script src="js/vue-resource1.3.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/jd_province_city_id.js"></script>
+<script src="js/common.js"></script>
+<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+<script>
+  /*function upperCase()
+        {
+        var phone = document.getElementById('phone').value;
+        if(!(/^1[34578]\d{9}$/.test(phone))){ 
+            alert("手机号码有误，请重填");  
+            return false; 
+        } 
+    } */ 
+// 定位当前城市--通过IP地址粗定位
+var city = remote_ip_info['city'];
+console.log(city);
+
+var FILE = "data/main.json"
+var call = Vue.http({method:'GET', url:FILE });
+
+call.then(function (data) {
+    console.log(data.body);
+    var vm = new Vue({
+      mixins: [mixin_common],
+      el: '#app',
+      mounted: function() {},
+
+      methods:{
+        
+        result:function(ret){
+            console.log(ret);
+            this.model =ret.itemName2 
+        },
+      },
+      data: {
+        my:data.body,
+        show: false,
+        model: city,
+        district: District,
+        
+      }
+    });
+});
+
+
+
+
+</script>

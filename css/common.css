@@ -327,3 +327,244 @@ body, h1, h2, h3, h4 {
     -ms-flex-preferred-size: 80%;
     flex-basis: 80%;
     margin-bottom: .1rem; }
+
+/*myTask*/
+.statusList {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 1rem;
+  border-bottom: 0.02rem solid #CCCCCC; }
+  .statusList li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 1rem;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #666666; }
+  .statusList li.active {
+    color: #2A88FF;
+    border-bottom: 0.02rem solid #2A88FF; }
+
+.mission li a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.3rem;
+  border-bottom: 1px solid #DDDDDD;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .mission li a .pic {
+    width: 23%;
+    margin-right: 0.2rem; }
+  .mission li a .intro {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+    .mission li a .intro .local {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -moz-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .mission li a .intro .local h4, .mission li a .intro .local span {
+        font-size: 0.35rem;
+        font-weight: bold; }
+      .mission li a .intro .local span {
+        color: red; }
+    .mission li a .intro p {
+      color: #666666;
+      margin-top: 0.1rem; }
+      .mission li a .intro p span {
+        margin-right: 0.5rem; }
+  .mission li a .arrowr {
+    width: 9%;
+    text-align: center; }
+
+/*detail*/
+.dutyIntro li {
+  padding: 0.3rem;
+  border-bottom: 1px solid #DDDDDD;
+  font-size: 0.3rem; }
+  .dutyIntro li .labels {
+    color: #666666; }
+  .dutyIntro li .dutyPrice {
+    color: red; }
+
+.assign {
+  padding: 0.3rem 0; }
+  .assign h4 {
+    font-size: 0.35rem;
+    font-weight: bold;
+    border-left: 0.1rem solid #2A88FF;
+    padding-left: 0.15rem;
+    color: #2A88FF;
+    margin: 0 0.2rem 0.2rem 0.2rem; }
+  .assign p {
+    margin: 0 0.3rem;
+    line-height: 0.4rem;
+    font-size: 0.3rem; }
+
+.grayBar {
+  height: 0.2rem;
+  background: #f3f3f3; }
+
+.picList {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0.3rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .picList img {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.15rem 0.15rem 0; }
+
+.meterial {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.3rem; }
+  .meterial span {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 0.3rem; }
+
+.files li {
+  padding: 0.2rem 0.3rem;
+  border-bottom: 1px solid #DDDDDD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .files li input {
+    border: none;
+    padding: 0.1rem 0.2rem;
+    background: #2A88FF;
+    color: white;
+    -webkit-border-radius: 0.1rem;
+    border-radius: 0.1rem; }
+
+.footerFixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: white;
+  border-top: 1px solid #DDDDDD;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .footerFixed .icons {
+    font-size: 0.4rem;
+    color: #f5a41a; }
+    .footerFixed .icons span {
+      font-size: 0.5rem;
+      margin: 0 0.2rem;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -moz-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+  .footerFixed input {
+    border: none;
+    color: white;
+    background: #2A88FF;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.4rem; }

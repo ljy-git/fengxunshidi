@@ -1,7 +1,23 @@
 {
 	"taskStatus": [
-	  { "text": '学习 JavaScript' },
-	  { "text": '学习 Vue' },
-	  { "text": '整个牛项目' }
+	  { "text": "已申领" },
+	  { "text": "待处理" },
+	  { "text": "待审核" },
+	  { "text": "已完成" },
+	  { "text": "已结算" }
+	],
+	"missionDetail": [
+	  { "type":"0","url":"detail.html?id=0","src": "images/sku2.jpg","storeName":"周黑鸭（长沙店）", "price":"120","itemName":"店面实地走访",
+	  	"address":"岳麓","time":"2017-07-24 09:00"},
+	  { "type":"0","url":"detail.html?id=0","src": "images/sku2.jpg","storeName":"周黑鸭（长沙店）", "price":"100","itemName":"店面实地走访",
+	  	"address":"岳麓","time":"2017-07-24 09:00"},
+	  { "type":"1","url":"detail.html?id=1","src": "images/sku2.jpg","storeName":"周黑鸭（长沙店）", "price":"120","itemName":"店面实地走访",
+	  	"address":"岳麓1","time":"2017-07-24 09:00"},
+	  { "type":"2","url":"detail.html?id=2","src": "images/sku2.jpg","storeName":"周黑鸭（长沙店）", "price":"120","itemName":"店面实地走访",
+	  	"address":"岳麓2","time":"2017-07-24 09:00"},
+	  { "type":"3","url":"detail.html?id=3","src": "images/sku2.jpg","storeName":"周黑鸭（长沙店）", "price":"120","itemName":"店面实地走访",
+	  	"address":"岳麓3","time":"2017-07-24 09:00"},
+	  { "type":"4","url":"detail.html?id=4","src": "images/sku2.jpg","storeName":"周黑鸭（长沙店）", "price":"120","itemName":"店面实地走访",
+	  	"address":"岳麓4","time":"2017-07-24 09:00"}
 	]
 }
