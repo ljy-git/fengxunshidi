@@ -1,0 +1,16 @@
+<div class='menu_top' :class='skin'> 
+	<div class='left'>
+		<a :href='url_up' class='u1'>
+			<i class='iconfont icon-zuo'></i>
+		</a>
+		<i class='iconfont icon-celanliebiao' @click="$emit('pop_nav')" ></i>
+	</div>
+
+	<img :src="skin=='green'?'images/logo_g.png':'images/logo_w.png'" class='middle'> 
+
+	<div class='right'>
+		<a :href='tel'> <i class='iconfont icon-dianhua'></i></a>
+		<i class='u4 iconfont' :class='w0'></i> 
+		<div class='qw'> {{w1}}~{{w2}} </div>
+	</div>
+</div>

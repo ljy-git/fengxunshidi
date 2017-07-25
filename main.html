@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+    <title>上海风逊实地</title>
+    <link rel="stylesheet" href="css/ydui.base.css">
+    <link rel="stylesheet" href="css/ydui.rem.css">
+    <link rel="stylesheet" href="css/common.css">
+  </head>
+    <body style="background-color: #fff;">
+        <div id="app" v-cloak > 
+            <div class="head2">
+                <a href="#" class="left" @click="show=!show"><i class='iconfont icon-dizhi1'></i>
+                    <div class="location">{{model}}</div>
+                    <i class='iconfont icon-xiangshang1'></i></a>
+                <div class="middle">首页</div>
+                <i class='iconfont icon-wode right'></i>
+            </div>
+
+            <div class="wrap_main">
+
+                <yd-slider autoplay="5000">
+                    <yd-slider-item v-for="item in my.slide_pic">
+                        <a :href="item.url">
+                            <img :src="item.src">
+                        </a>
+                    </yd-slider-item>
+                </yd-slider>
+                
+
+                <div class="news_bar">
+                    <div class="left">消息通知：</div>
+                    <yd-rollnotice autoplay="2000">
+                        <yd-rollnotice-item v-for="item in my.news_list"><a :href="item.url">{{item.txt}}</a></yd-rollnotice-item>
+                    </yd-rollnotice>
+                </div>
+
+                <hr class="h20">
+
+                <div class="filter_wrap">
+                    <ul class="filter_header">
+                        <li><span>分类</span> <i class='iconfont icon-xiangxiajiantou'></i></li>
+                        <li><span>时间</span> <i class='iconfont icon-xiangxiajiantou'></i></li>
+                    </ul>
+                </div>
+
+                <ul class="task_list">
+                    <li v-for="item in my.task_list">
+                        <div class="left">{{item.type_tag}}</div>
+                        <div class="middle task_cont">
+                            <div class="tit">{{item.tit}}</div>
+                            <div class="type">{{item.type}}</div>
+                            <div class="count_down"><i class='iconfont '></i><yd-countdown :time="item.stop_time"></yd-countdown></div>
+                            <div class="adr">{{item.adress}}</div>
+                            <div class="start_time">任务开始时间：{{item.task_start_time}}</div>
+                        </div>
+                        <i class='iconfont icon-xiangyoujiantou'></i>
+
+                    </li>
+                </ul>
+                <input type="text" placeholder="请输入手机号" >
+
+            <p :class="{'red':true}">验证码</p>
+
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">手机号</label>
+                <div class="input-icon">
+                    <input class="form-control placeholder-no-fix" type="text"
+                        autocomplete="off" placeholder="请输入手机号" name="name" style="height: 34px;" id="phone" onblur="upperCase()">
+                </div>
+            </div>
+
+
+
+
+            </div>
+
+            <!-- 地址列表弹窗           -->
+            <yd-cityselect v-model="show" :done="result" :items="district"></yd-cityselect>
+
+            
+         </div>
+    </body>
+</html>
+
+<script src="js/vue2.js"></script>
+<script src="js/vue-resource1.3.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/jd_province_city_id.js"></script>
+<script src="js/common.js"></script>
+<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+<script>
+  /*function upperCase()
+        {
+        var phone = document.getElementById('phone').value;
+        if(!(/^1[34578]\d{9}$/.test(phone))){ 
+            alert("手机号码有误，请重填");  
+            return false; 
+        } 
+    } */ 
+// 定位当前城市--通过IP地址粗定位
+var city = remote_ip_info['city'];
+console.log(city);
+
+var FILE = "data/main.json"
+var call = Vue.http({method:'GET', url:FILE });
+
+call.then(function (data) {
+    console.log(data.body);
+    var vm = new Vue({
+      mixins: [mixin_common],
+      el: '#app',
+      mounted: function() {},
+
+      methods:{
+        
+        result:function(ret){
+            console.log(ret);
+            this.model =ret.itemName2 
+        },
+      },
+      data: {
+        my:data.body,
+        show: false,
+        model: city,
+        district: District,
+        
+      }
+    });
+});
+
+
+
+
+</script>

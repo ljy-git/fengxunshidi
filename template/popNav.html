@@ -1,0 +1,19 @@
+<div>
+	<div class='pop_mask' v-if='show' @click="$emit('close')"></div>
+	<div class='pop_nav'  :class="{'active':show}">
+		<i class='close iconfont icon-cuo' @click="$emit('close')"></i>
+		<div class='cc'> <div class='tit_big'>MENU</div>
+			<ul class='list' v-once>
+				<li v-for='item in arr_nav'>
+					<div class='tit'>{{item.tit}}</div>
+					<div class='icos'>
+						<a :href='ii.url' v-for='ii in item.sub'>
+							<div class='ico'><i class='iconfont' :class='ii.ico'></i></div>
+							<h3>{{ii.tit}}</h3>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

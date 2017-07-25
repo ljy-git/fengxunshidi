@@ -1,0 +1,20 @@
+{
+    "slide_pic":[
+    	{"src":"images/slide1.jpg","url":"detail.html?id=0"},
+    	{"src":"images/slide2.jpg","url":"detail.html?id=1"},
+    	{"src":"images/slide3.jpg","url":"detail.html?id=2"},
+        {"src":"images/slide4.jpg","url":"detail.html?id=3"}
+    ],
+    "news_list":[
+            {"txt":"2016年清凉 补贴已送达，操作员们请关注哦～","url":"http://115.28.36.62:83/login/Login"},
+            {"txt":"前方优秀操作员出没！ 呼和浩特操作员樊荣荣，5月20日执行风逊实地会务项目时，因故直至深夜23:20才结束.","url":"http://115.28.36.62:83/login/Login"},
+            {"txt":"2016年清凉 补贴已送达，操作员们请关注哦～","url":"http://115.28.36.62:83/login/Login"},
+            {"txt":"2016年清凉 补贴已送达，操作员们请关注哦～","url":"http://115.28.36.62:83/login/Login"}
+        ],
+        "task_list":[
+            {"type_tag":"暗访","tit":"餐厅实地合规审查","type":"店面实地暗访","stop_time":"2017/08/06 06:06:06","adress":"岳麓","task_start_time":"07月10日　08:00"},
+            {"type_tag":"跟会","tit":"GSK大会跟会项目","type":"店面实地暗访","stop_time":"2017/08/04 09:06:06","adress":"岳麓","task_start_time":"07月10日　08:00"},
+            {"type_tag":"实地","tit":"百度实地认证项目","type":"店面实地暗访","stop_time":"2017/08/01 13:16:06","adress":"岳麓","task_start_time":"07月10日　08:00"}
+        ]
+
+}

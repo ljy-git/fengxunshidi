@@ -1,0 +1,7 @@
+<div
+	class="pop_detail vv"
+	:class="{'active':show}"
+	:style="{height: hh + '%'}">
+	
+	<i class='close iconfont icon-cuo' @click="$emit('close')"></i> <slot></slot>
+</div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+    <title>美嘉优购</title>
+    <link rel="stylesheet" href="css/common.css">
+  </head>
+    <body>
+        <div id="app" v-cloak > 
+            <div class="head1">
+                <a href="main.html" class="left">
+                    <i class='iconfont icon-prev'></i>返回
+                </a>
+                <search_bar holder="搜索附近的商品和门店" class="right" @search="searchH"></search_bar>
+            </div>
+
+            <div class="wrap_main">
+               
+                <div class="tit_big">
+                    <div class="line"></div>
+                    <h1><i class='iconfont icon-dianpu'></i> 热门搜索</h1>
+                    <div class="line"></div>
+                </div>
+                
+                <ul class="search_list">
+                    <li v-for="item in my.list_hot">{{item.tit}}</li>
+                </ul>
+                <div class="h20"></div>
+                <div class="tit_big yellow">
+                    <div class="line"></div>
+                    <h1><i class='iconfont icon-dianpu'></i> 搜索历史</h1>
+                    <div class="line"></div>
+                </div>
+                
+                <ul class="search_list">
+                    <li v-for="item in my.list_hot">{{item.tit}}</li>
+                </ul>
+            </div>
+            
+            <nav_foot :active="-1"></nav_foot>
+         </div>
+    </body>
+</html>
+
+<script src="js/vue2.js"></script>
+<script src="js/vue-resource1.3.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/common.js"></script>
+<script>
+var FILE = "data/search.json"
+var call = Vue.http({method:'GET', url:FILE });
+
+call.then(function (data) {
+    console.log(data.body.store_name);
+    var vm = new Vue({
+      mixins: [mixin_common],
+      el: '#app',
+      mounted: function() {},
+
+      methods:{
+        searchH:function(e){
+            console.log("搜索:",e);
+        }
+      },
+      data: {
+        my:data.body
+      }
+    });
+});
+
+    
+</script>
