@@ -13,24 +13,23 @@
             <div class="head1">
                 <a href="#" class="left">
                     <i class='iconfont icon-xiangzuojiantou'></i>返回</a>
-                <div class="middle">账号登录</div>
-                <div class="right c1">注册</div>
+                <div class="middle">找回密码</div>
+                <div class="right c1"></div>
             </div>
             <hr class="h20">
             <div class="cell2">
-                <div class="left"><span v-if="isTrue">账号</span><span v-if="!isTrue">手机号</span></div>
+                <div class="left">手机号</div>
                 <div class="middle">
-                    <input type="text" placeholder="请输入手机号" v-model="phone" id="phone" @input="check_phone">
+                    <input type="text" placeholder="请输入手机号" v-model="phone" @input="check_phone">
                 </div>
             </div>
             <div class="cell2">
-                <div class="left"><span v-if="isTrue">密码</span><span v-if="!isTrue">验证码</span></div>
+                <div class="left">验证码</div>
                 <div class="middle">
-                    <input type="password" placeholder="请输入密码" v-if="isTrue" v-model="passwd" @input="check_passwd">
-                    <input type="text" placeholder="请输入验证码" v-if="!isTrue" v-model="passcode" @input="check_passcode">
+                    <input type="text" placeholder="请输入验证码" v-model="passcode" >
                 </div>
-                <div class="right">｜<span class="c1" v-show="isTrue">忘记密码？</span><span v-show="!isTrue" ><yd-sendcode 
-                        :class="{'active2':isPhone,'btn-disabled':!isPhone}"
+                <div class="right">｜<span><yd-sendcode 
+                        :class="{'active2':isPhone}"
                         slot="right" 
                          v-model="start1" 
                          @click.native="sendCode1" 
@@ -40,16 +39,23 @@
             resetStr="重新发送"
             ></yd-sendcode></span></div>
             </div>
+            <div class="cell2">
+                <div class="left">密码</div>
+                <div class="middle">
+                    <input type="password" placeholder="请输入新密码" v-model="passWord1">
+                </div>
+            </div>
+            <div class="cell2">
+                <div class="left">确认密码</div>
+                <div class="middle">
+                    <input type="password" placeholder="请再次输入密码" v-model="passWord2" @input="check_passWord2">
+                </div>
+            </div>
 
-            <div class="h20"></div>
-
-            <div class="btn2" :class="{'active2':isLogin,'btn2_disable':!isLogin}" @click="submit">登录</div>
- 
             <div class="h30"></div>
 
-            <div class="login_bottom" @click="isTrue=!isTrue"><span class="c1" v-if="isTrue">验证码登录</span><span class="c1" v-if="!isTrue">密码登录</span></div>
-            
-            
+            <div class="btn2" :class="{'active2':isLogin,'btn2_disable':!isLogin}">确认</div>
+ 
 
             
          </div>
@@ -83,7 +89,6 @@ call.then(function (data) {
                 this.isPhone = true;
             }else {
                 this.isPhone = false;
-
             }
         },
         sendCode1:function () {
@@ -106,34 +111,27 @@ call.then(function (data) {
                     this.isPhone = true; 
                 }, 5500);
         },
-        submit:function () {
-            
-        },
-        check_passwd:function () {// 账号密码登录验证点亮登录按钮
-            if (this.isPhone&&this.passwd.length>0) {
+        check_passWord2:function () {
+            if (this.isPhone&&this.passcode.length==6&&this.passWord1==this.passWord2&&this.passWord1.length>=6&&this.passWord2.length>=6) {
+                console.log(this.isPhone);
+                console.log(this.passcode==6);
+                console.log(this.passWord1==this.passWord2);
                 this.isLogin = true
-            } else{
+            } else {
                 this.isLogin = false
             }
-        },
-        check_passcode:function () {// 手机+验证码登录验证点亮登录按钮
-            if (this.isPhone&&this.passcode.length==6&&true) {
-                this.isLogin = true
-            } else{
-                this.isLogin = false
-            }
-        },
+        }
         
       },
       data: {
         my:data.body,
-        isTrue: true,  //密码登录与验证码登录切换开关
-        isPhone:false,  //手机号输入正确后，验证码点亮
         start1: false, //为true开始倒计时功能
+        isPhone:false,  //手机号输入正确后，验证码点亮
         isLogin: false, //登录按钮点亮开关
-        phone:"",
-        passwd:"",
-        passcode:"",
+        phone:"",  
+        passcode:"",  
+        passWord1:"",  
+        passWord2:"",  
         
         
       }

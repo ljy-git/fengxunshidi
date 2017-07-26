@@ -135,8 +135,17 @@ body,h1,h2,h3,h4{font-size: 0.2rem; color: #000; line-height: 160%;}
 
 .btn2{width: 80%;height: .8rem;margin: 0 auto;text-align: center;background-color: #ccc;line-height: .8rem;border-radius: 5px;color: #fff;font-size: .3rem;}
 .login_bottom{text-align: center;}
+// 重置验证码发送按钮默认样式
+.cell2{
+     .btn{height: 0.5rem;}
+     .btn-warning{background-color: #999;}
+}
 
-
+// 验证码,登录按钮点亮后激活样式
+.cell2 .active2{background-color: #ffb400;}
+.active2{background-color: #ffb400;}
+// 密码输入正确前，禁止点击登录按钮样式
+.btn2_disable{pointer-events:none;}
 
 
 /*myTask*/
