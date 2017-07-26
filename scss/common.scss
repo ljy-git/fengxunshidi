@@ -111,6 +111,33 @@ body,h1,h2,h3,h4{font-size: 0.2rem; color: #000; line-height: 160%;}
 	.start_time{flex-basis: 80%;margin-bottom: .1rem;}
 }
 
+/*login*/
+.head1{
+	background-color: #fff;  display: flex; align-items: center;  height: $h_top;  padding: 0 $p25;justify-content: space-between;
+	i{font-size: .35rem;}
+	.left{
+		flex:0 0 20%; font-size: .3rem; display: flex; align-items: center; 
+		.iconfont{margin-right: 0.1rem;}
+	}
+	.middle{font-size: 0.3rem; }
+	.right{flex:0 0 20%; text-align: right;font-size: .3rem;}
+}
+.cell2{
+	background-color: #fff;display: flex;-ms-align-items: center;
+	align-items: center;height: .8rem;border-bottom: 1px solid #ddd;padding: 0 .25rem;
+	.left{flex-basis: 20%; font-size: .3rem;}
+	.middle{
+		flex: 1;
+		input{border: none;width: 100%;font-size: .3rem;}
+	}
+	.right{margin-left: .2rem;color: #999;}
+}
+
+.btn2{width: 80%;height: .8rem;margin: 0 auto;text-align: center;background-color: #ccc;line-height: .8rem;border-radius: 5px;color: #fff;font-size: .3rem;}
+.login_bottom{text-align: center;}
+
+
+
 
 /*myTask*/
 $borderb:1px solid #DDDDDD;
