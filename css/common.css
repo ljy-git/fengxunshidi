@@ -150,7 +150,7 @@ body, h1, h2, h3, h4 {
   left: 0;
   top: 0.85rem;
   right: 0;
-  bottom: 0;
+  bottom: 1.3rem;
   margin: auto;
   overflow: auto; }
 
@@ -606,8 +606,12 @@ body, h1, h2, h3, h4 {
     font-size: 0.3rem; }
 
 .files li {
+  border-bottom: 1px solid #DDDDDD; }
+  .files li:last-child {
+    border-bottom: none; }
+
+.files li a {
   padding: 0.2rem 0.3rem;
-  border-bottom: 1px solid #DDDDDD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -623,7 +627,7 @@ body, h1, h2, h3, h4 {
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  .files li input {
+  .files li a input {
     border: none;
     padding: 0.1rem 0.2rem;
     background: #2A88FF;
@@ -669,4 +673,48 @@ body, h1, h2, h3, h4 {
     color: white;
     background: #2A88FF;
     padding: 0.3rem 0.7rem;
+    font-size: 0.4rem; }
+
+/*person*/
+.personList li a {
+  background: white;
+  padding: 0.3rem 0.3rem 0.3rem 0.6rem; }
+  .personList li a span i {
+    font-size: 0.5rem;
+    margin-right: 0.2rem;
+    vertical-align: middle; }
+  .personList li a span em {
+    font-size: 0.3rem;
+    vertical-align: middle; }
+  .personList li a span .icon-renwu {
+    color: #f5a41a; }
+  .personList li a span .icon-qianbao, .personList li a span .icon-guanyuwomen {
+    color: #0082E6; }
+
+.personBox {
+  background: #0190FE;
+  padding: 0.4rem 0.3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .personBox img {
+    width: 1.8rem;
+    height: 1.8rem;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 0.3rem; }
+  .personBox p {
+    color: white;
+    font-size: 0.3rem;
+    margin: 0.25rem 0; }
+    .personBox p i {
+      margin-right: 0.1rem; }
+  .personBox .personName {
     font-size: 0.4rem; }

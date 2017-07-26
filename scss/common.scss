@@ -52,7 +52,7 @@ body,h1,h2,h3,h4{font-size: 0.2rem; color: #000; line-height: 160%;}
 
 .wrap_main img{ max-width: 100%;}
 .wrap_main{
-	position: absolute; left: 0; top: $h_top; right: 0; bottom: 0;margin:auto; overflow: auto;
+	position: absolute; left: 0; top: $h_top; right: 0; bottom: 1.3rem;margin:auto; overflow: auto;
 }
 
 /*banner图高度*/
@@ -194,8 +194,11 @@ $borderb:1px solid #DDDDDD;
     span{flex: 1;justify-content:space-between;font-size: 0.3rem;}
 }
 .files li{
-    padding: 0.2rem 0.3rem;border-bottom: $borderb;
-    display: flex;align-items: center;justify-content:space-between;
+    border-bottom: $borderb;
+    &:last-child{border-bottom:none;}
+}
+.files li a{
+    padding: 0.2rem 0.3rem;display: flex;align-items: center;justify-content:space-between;
     input{border: none;padding: 0.1rem 0.2rem; background: #2A88FF;color: white;border-radius: 0.1rem;}
 }
 .footerFixed{
@@ -207,7 +210,24 @@ $borderb:1px solid #DDDDDD;
     input{border: none;color: white;background: #2A88FF;padding:0.3rem 0.7rem;font-size: 0.4rem;}
 }
 
-
+/*person*/
+.personList li a{
+    background: white;padding: 0.3rem 0.3rem 0.3rem 0.6rem;
+    span{
+        i{font-size: 0.5rem;margin-right: 0.2rem;vertical-align: middle;}
+        em{font-size: 0.3rem;vertical-align: middle;}
+        .icon-renwu{color: #f5a41a;}
+        .icon-qianbao,.icon-guanyuwomen{color: #0082E6;}
+    }
+}
+.personBox{
+    background: #0190FE;padding: 0.4rem 0.3rem;display: flex;align-items: center;
+    img{width: 1.8rem;height: 1.8rem;border-radius: 50%;margin-right: 0.3rem;}
+    p{color: white;font-size: 0.3rem;margin: 0.25rem 0;
+        i{margin-right: 0.1rem;}
+    }
+    .personName{font-size: 0.4rem;}
+}
 
 
 

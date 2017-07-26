@@ -37,9 +37,15 @@
 
 .icon-qianbao:before { content: "\e601"; }
 
+.icon-aixin1:before { content: "\e602"; }
+
+.icon-renwu1:before { content: "\e604"; }
+
 .icon-renwu:before { content: "\e60f"; }
 
 .icon-cloud-time:before { content: "\e617"; }
+
+.icon-HeartIcon:before { content: "\e61b"; }
 
 .icon-xiangshang:before { content: "\e618"; }
 
@@ -47,3 +53,6 @@
 
 .icon-xiangshang1:before { content: "\e600"; }
 
+.icon-caifushuxing-copy:before { content: "\e606"; }
+
+.icon-guanyuwomen1:before { content: "\e607"; }

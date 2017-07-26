@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+    <title>我的</title>
+    <link rel="stylesheet" href="css/ydui.base.css">
+    <link rel="stylesheet" href="css/ydui.rem.css">
+    <link rel="stylesheet" href="css/common.css">
+  </head>
+	<body>
+		<div id="app" v-cloak > 
+			<div class="head2">
+		        <a href="#" class="left"><i class='iconfont icon-xiangzuojiantou'></i>返回</a>
+		        <div class="middle">我的</div>
+		        <div class="right"><a href="index.html"><i class="iconfont icon-zhuye"></i></a></div>
+		    </div>
+	        <div class="wrap_main">
+	        	<div class="personBox">
+	        		<img :src="my.src" />
+	        		<div>
+	        			<p class="personName">{{my.name}}</p>
+	        			<p>积分：{{my.score}}</p>
+	        			<p>我的勋章：<i class="iconfont icon-aixin"></i><i class="iconfont icon-aixin"></i><i class="iconfont icon-aixin"></i><i class="iconfont icon-aixin"></i></p>
+	        		</div>
+	        	</div>
+	        	<ul class="files personList">
+	        		<li>
+	        			<a href="myTask.html">
+	        				<span><i class="iconfont icon-renwu"></i><em>我的任务</em></span>
+	        				<span class="iconfont icon-xiangyoujiantou"></span>
+	        			</a>
+	        		</li>
+	        		<li>
+	        			<a href="myTask.html">
+	        				<span><i class="iconfont icon-qianbao"></i><em>我的财富</em></span>
+	        				<span class="iconfont icon-xiangyoujiantou"></span>
+	        			</a>
+	        		</li>
+	        		<li>
+	        			<a href="myTask.html">
+	        				<span><i class="iconfont icon-guanyuwomen"></i><em>关于我们</em></span>
+	        				<span class="iconfont icon-xiangyoujiantou"></span>
+	        			</a>
+	        		</li>
+	        	</ul>
+	        </div>
+        </div>
+		<script src="js/vue2.js"></script>
+		<script src="js/vue-resource1.3.js"></script>
+		<script src="js/ydui.js"></script>
+		<script src="js/ydui.flexible.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			var FILE = "data/person.json"
+			var call = Vue.http({method:'GET', url:FILE });
+			
+			call.then(function (data) {
+			    var vm = new Vue({
+			      mixins: [mixin_common],
+			      el: '#app',
+			      mounted: function() {},
+			
+			      methods:{
+			      },
+			      data: {
+			        my:data.body,
+			      }
+			    });
+			});
+		</script>
+	</body>
+</html>
