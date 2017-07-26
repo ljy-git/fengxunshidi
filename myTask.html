@@ -11,7 +11,7 @@
 	<body style="background: white;">
 		<div id="app" v-cloak > 
 			<div class="head2">
-                <a href="#" class="left"><i class='iconfont icon-xiangzuojiantou'></i>返回</a>
+                <a href="person.html" class="left"><i class='iconfont icon-xiangzuojiantou'></i>返回</a>
                 <div class="middle">我的任务</div>
                 <div class="right"></div>
             </div>
@@ -27,8 +27,8 @@
 	            			<div class="pic"><img :src="item.src" /></div>
 		            		<div class="intro">
 		            			<div class="local"><h4>{{item.storeName}}</h4><span>{{item.price}}/单</span></div>
-		            			<p>{{item.itemName}}</p>
-		            			<p><span>{{item.address}}</span><span>{{item.time}}</span></p>
+		            			<p><span>{{item.itemName}}</span><span>{{item.address}}</span></p>
+		            			<p><span>{{item.time}}</span><yd-badge v-if="current==1" style="margin-right: 0;" shape="square" type="danger">{{item.classify}}</yd-badge></p>
 		            		</div>
 		            		<div class="arrowr"><i class="iconfont icon-xiangyoujiantou"></i></div>
 	            		</a>
